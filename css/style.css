@@ -36,17 +36,17 @@
   max-width: 985px;
   width: 100%;
 }
-#messageINP {
+#msgINP {
   width: 91%;
   border: 2px solid black;
   border-radius: 7px;
   height: 34px;
 }
-.btn{
-    cursor: pointer;
-    border: 2px solid black;
-    border-radius: 6px;
-    height: 39px;
+.btn {
+  cursor: pointer;
+  border: 2px solid black;
+  border-radius: 6px;
+  height: 39px;
 }
 body {
   height: 100vh;

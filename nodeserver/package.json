@@ -9,6 +9,8 @@
   "author": "Prasen Narayan",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
+    "nodemon": "^3.0.1",
     "socket.io": "^4.7.2"
   }
 }
