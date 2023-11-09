@@ -36,5 +36,5 @@ socket.on('deliver-msg', data =>{
 })
 
 socket.on('leave', name =>{
-  append(`${name} left the Chat Room hi`, 'left')
+  append(`${name} left the Chat Room`, 'left')
 })
