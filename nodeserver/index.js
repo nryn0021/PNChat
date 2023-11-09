@@ -14,6 +14,11 @@ io.on('connection', socket=>{           // instance which listens to all diffren
     socket.on('send-msg',message =>{
         socket.broadcast.emit('deliver-msg',{message: message, name: users[socket.id]})
      });
+
+    socket.on('disconnect', message =>{
+        socket.broadcast.emit('leave', users[socket.id]);
+        delete users[socket.id];
+   });
 })
 
 
