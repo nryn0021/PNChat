@@ -4,7 +4,7 @@ const io = require("socket.io")(8000, {
   cors: {}
 });
 const users ={};
-io.on('connection', socket=>{           // instance which listens to all diffrent connection //all for new event
+io.on('connection', socket=>{           // instance which listens to all diffrent connection all for new event
     socket.on('new-user-joined', name =>{    // handles particular connection
         console.log(name,"Has Joined The Chat");
         users[socket.id] = name; 
@@ -15,8 +15,10 @@ io.on('connection', socket=>{           // instance which listens to all diffren
         socket.broadcast.emit('deliver-msg',{message: message, name: users[socket.id]})
      });
 
-    socket.on('disconnect', message =>{
+    socket.on('disconnect', message =>{                 //if someone leaves let others know
+        
         socket.broadcast.emit('leave', users[socket.id]);
+        console.log(users[socket.id],"Has Left The Chat");
         delete users[socket.id];
    });
 })
